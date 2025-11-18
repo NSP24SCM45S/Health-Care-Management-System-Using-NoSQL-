@@ -1,0 +1,32 @@
+ 
+scp -i /Users/narendrasrivastava/Downloads/Big Data Project D:/Graduate/Third_sem/Big_data/Assign12/ex5.cql hadoop@ec2-3-235-184-177.compute-1.amazonaws.com:/home/hadoop
+
+
+
+ ssh -i Macintosh HD/Users/narendrasrivastava/Downloads/Big Data Project/bigdataProjectKey.ppk hadoop@ec2-3-235-184-177.compute-1.amazonaws.com
+
+
+
+
+wget https://archive.apache.org/dist/cassandra/3.11.2/apache-cassandra-3.11.2-bin.tar.gz
+
+tar -xzvf apache-cassandra-3.11.2-bin.tar.gz
+
+apache-cassandra-3.11.2/bin/cassandra &
+
+CREATE KEYSPACE Healthcare WITH REPLICATION = { 'class' : 'SimpleStrategy', 'replication_factor' : 1 }
+
+source ‘./init.cql’;
+describe keyspaces;
+USE Healthcare;
+
+
+
+CREATE TABLE Music(artistName text,albumName text,numberSold int,cost int,PRIMARY KEY(artistName,albumName));
+
+
+
+
+queries:
+1) patients with Cigna insurance provider
+2) doctors working for cardiology
